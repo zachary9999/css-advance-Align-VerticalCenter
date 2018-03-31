@@ -20,7 +20,10 @@
         text-align: center;
         margin: 10px 0;
     }
-
+    .download{
+        text-align: center;
+        margin:10px 0;
+    }
     section {
         float: left;
         width: 50%;
@@ -62,10 +65,13 @@
 
 <body>
     <h1>css进阶之css水平垂直居中方案汇总</h1>
-    <!-- absolute 负边距 宽高指定 -->
-    <section class="">
+        <p class="download"><a href="https://github.com/zachary9999/css-advance-Align-VerticalCenter" title="">
+        源码下载
+    </a></p>
+    <!-- 1.absolute 负边距 宽高指定 -->
+    <section class="am-1">
         <style type="text/css" media="screen">
-        .absolute-margin {
+        .am-1 .box {
             margin: auto;
             position: absolute;
             top: 50%;
@@ -74,28 +80,44 @@
             margin-left: -50px;
         }
         </style>
-        <div class="box wh100 absolute-margin">
+        <div class="box wh100">
             absolute 负边距
             <br> (宽高指定)
         </div>
     </section>
-    <!--absolute + calc 宽高指定 -->
-    <section class="">
+    <!--2.absolute + calc 宽高指定 -->
+    <section class="ac">
         <style type="text/css" media="screen">
-        .ab {
+        .ac .box {
             margin: auto;
-            background: red;
             position: absolute;
             top: calc(50% - 50px);
             left: calc(50% - 50px);
         }
         </style>
-        <div class="box wh100 absolute-margin">
+        <div class="box wh100">
             absolute + calc
             <br> (宽高指定)
         </div>
     </section>
-    <!-- inline-block  -->
+    <!-- 3.absolute拉伸 margin:auto 不限宽高 -->
+    <section class="am">
+        <style>
+        .am .box{
+            position: absolute;
+            margin: auto;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+        }
+        </style>
+        <div class="box wh100">
+            absolute 拉伸 margin:auto
+            <br>(不限宽高)
+        </div>
+    </section>
+    <!-- 4.inline-block  -->
     <section class="ib">
         <style type="text/css" media="screen">
         .ib {
@@ -115,27 +137,10 @@
             <br> (不限宽高)
         </div>
     </section>
-    <!-- absolute 拉伸 margin:auto 不限宽高 -->
-    <section class="">
-        <style>
-        .am {
-            position: absolute;
-            margin: auto;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-        }
-        </style>
-        <div class="box wh100 am">
-            absolute 拉伸 margin:auto
-            <br>(不限宽高)
-        </div>
-    </section>
-    <!-- absolute  transform方案 不限宽高 -->
-    <section>
+    <!-- 5.absolute  transform方案 不限宽高 -->
+    <section class='at'>
         <style type="text/css" media="screen">
-        .at {
+        .at .box{
             margin: auto;
             position: absolute;
             top: 50%;
@@ -143,12 +148,12 @@
             transform: translateX(-50%) translateY(-50%);
         }
         </style>
-        <div class="box wh100 at">
+        <div class="box wh100">
             absolute transform方案
             <br> (不限宽高)
         </div>
     </section>
-    <!-- writing-mode 方案-->
+    <!-- 6.writing-mode 方案-->
     <section class="wm">
         <style type="text/css" media="screen">
         .wm {
@@ -176,60 +181,60 @@
             </div>
         </div>
     </section>
-    <!-- table方案 -->
+    <!-- 7.css table方案 -->
     <section class="table">
         <style type="text/css" media="screen">
-        .table{
-        	display: table;
+        .table {
+            display: table;
         }
+
         .table-cell {
-          	display: table-cell;
+            display: table-cell;
             text-align: center;
             vertical-align: middle;
         }
+
         .table .box {
             display: inline-block;
         }
         </style>
         <div class="table-cell">
-	        <div class="box wh100">
-	        	css-table方案
-	        	<br>(不限宽高)
-	        </div>
+            <div class="box wh100">
+                css-table方案
+                <br>(不限宽高)
+            </div>
         </div>
     </section>
-
-    <!-- flex方案 -->
+    <!-- 8.flex方案 -->
     <section class="flex">
-    		<style type="text/css" media="screen">
-    			.flex{
-				    display: flex;
-				    justify-content: center;
-				    align-items: center;
-    			}
-    		</style>
-    		<div class="box wh100">
-    			flex	<br>		
-    			(不限宽高)
-    		</div>
+        <style type="text/css" media="screen">
+        .flex {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        </style>
+        <div class="box wh100">
+            flex
+            <br> (不限宽高)
+        </div>
     </section>
-
-	<!-- grid方案 -->
+    <!-- 9.grid方案 -->
     <section class="gird">
-    	<style type="text/css" media="screen">
-    		.gird{
-    			display: grid;
-    		}
-    		.gird .box{
-			    align-self: center;
-    			justify-self: center;
-    		}
-    	</style>
-    	<div class="box wh100">
-    	   gird <br>
-    	   （不限宽高）
-    	</div>
-    	
+        <style type="text/css" media="screen">
+        .gird {
+            display: grid;
+        }
+
+        .gird .box {
+            align-self: center;
+            justify-self: center;
+        }
+        </style>
+        <div class="box wh100">
+            gird
+            <br> （不限宽高）
+        </div>
     </section>
 </body>
 
